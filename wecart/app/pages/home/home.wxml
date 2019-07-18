@@ -1,0 +1,52 @@
+<!-- pages/home/home.wxml -->
+<!-- <text>pages/home/home.wxml</text> -->
+<view>
+    <view>home - home</view>
+    <view>{{word}}</view>
+    <view>{{flag?"一样":"不一样"}}</view>
+    <view data-word="{{word}}">count=={{count}}</view>
+    <switch bind:change="changeFlag" checked="{{flag}}"></switch>
+    <view wx:if="{{!flag}}">
+        <image src="{{imgUrl}}" style="width:100%" />
+        <a href="{{url}}"></a>
+    </view>
+    <view wx:else>渲染切换</view>
+    <view bind:tap="countAdd">{{msg}}</view>
+    <view wx:for="{{list}}" wx:key="index">{{index}} == {{item}}</view>
+    <view hidden="{{!flag}}" wx:for="{{num}}" wx:for-item="i" wx:key="index">
+        <view wx:for="{{num}}" wx:for-item="j" wx:for-index="li" wx:key="li">
+            <view wx:if="{{i<=j}}">{{i}}*{{j}}={{i*j}}</view>
+        </view>
+    </view>
+    <view wx:if="{{!isLogin}}">
+        <view>你好：luke</view>
+    </view>
+    <view wx:else>
+        您还没登陆：
+        <button type="primary" id="btn">请登录</button>
+    </view>
+    <view>
+        <button data-msg="wh1902" type="primary" id="btn" bind:tap="tapMe">press me</button>
+        <view>
+            <input type="text" name="" id="" placeholder="请输入" bindinput="getVal" />
+        </view>
+    </view>
+    <template name="kk">
+        <view>
+            <view>users</view>
+            <view>name == {{name}}</view>
+            <view>age == {{age}}</view>
+        </view>
+    </template>
+    <template is="kk" data="{{name:'luke',age:28}}" />
+    <import src="/tpls/like.wxml"></import>
+    <template is="like" data="{{...like}}"></template>
+    <import src="/tpls/login.wxml"></import>
+    <template is="login" data="{{...loginData}}"></template>
+    <view >
+        <button type="warn" bind:tap="openModal">打开modal</button>
+    </view>
+    <view >
+        <button type="primary" bind:tap="openPhoto">点击拍照获取头像</button>
+    </view>
+</view>

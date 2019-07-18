@@ -1,0 +1,11 @@
+/* pages/mine/mine.wxss */
+swiper,swiper-item, .swiper-image{
+    width: 100%;
+    height: 600rpx;
+}
+.inp{
+    border: 2px solid skyblue;
+}
+#myAudio,#myVideo{
+    width:100%;
+}

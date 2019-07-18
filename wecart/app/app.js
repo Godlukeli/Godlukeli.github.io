@@ -1,5 +1,5 @@
-//app.js
-App({
+//app.js   小程序项目启动的主文件
+App({ // APP 用来注册小程序页面
   onLaunch: function () {
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
@@ -33,7 +33,7 @@ App({
       }
     })
   },
-  globalData: {
+  globalData: { // 相当于全局变量
     userInfo: null
   }
 })

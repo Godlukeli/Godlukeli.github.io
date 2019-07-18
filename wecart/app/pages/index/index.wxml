@@ -9,5 +9,10 @@
   </view>
   <view class="usermotto">
     <text class="user-motto">{{motto}}</text>
+    <view wx:if="{{flag}}">{{word}}</view>
+    <view bind:tap="countAdd">{{count}}</view>
+  </view>
+  <view >
+    <button bind:tap="gotoHome" type="warn">跳转首页</button>
   </view>
 </view>

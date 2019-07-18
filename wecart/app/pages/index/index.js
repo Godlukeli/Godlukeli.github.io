@@ -7,9 +7,29 @@ Page({
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    flag:true,
+    word:"why me so diao ?",
+    count:1902
   },
   //事件处理函数
+
+  countAdd(){
+    this.data.count++;
+    this.setData({
+      count:this.data.count
+    })
+  },
+
+  gotoHome(){
+    // wx.navigateTo({
+    //   url:"../home/home?id=1902"
+    // })
+    wx.switchTab({
+      url:"../home/home"
+    })
+  },
+
   bindViewTap: function() {
     wx.navigateTo({
       url: '../logs/logs'
